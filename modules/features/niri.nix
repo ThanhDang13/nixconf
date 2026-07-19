@@ -3,7 +3,7 @@
   flake.nixosModules.niri = { pkgs, lib, ... }: {
     programs.niri = {
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.sNiri;
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.sniri;
       useNautilus = true;
     };
 
@@ -27,13 +27,13 @@
   };
 
   perSystem = { pkgs, lib, self', ... }: {
-    packages.sNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+    packages.sniri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       
       settings = {
 
         spawn-at-startup = [
-	        (lib.getExe self'.packages.sNoctalia)
+	        (lib.getExe self'.packages.snoctalia)
         ];
 
         hotkey-overlay.skip-at-startup = true;
@@ -85,9 +85,9 @@
         };
 
         binds = {
-          "Mod+Q".spawn-sh = lib.getExe self'.packages.sKitty;
+          "Mod+Q".spawn-sh = lib.getExe self'.packages.skitty;
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
-          "Mod+R".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call launcher toggle";
+          "Mod+R".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call launcher toggle";
           
           "Mod+W".switch-preset-column-width = { };
           "Mod+Minus".set-column-width = "-10%";
@@ -127,13 +127,13 @@
           "Mod+C".close-window = { };
           "Mod+Tab".toggle-overview = { };
 
-          "XF86MonBrightnessUp".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call brightness increase"; 
-          "XF86MonBrightnessDown".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call brightness decrease"; 
+          "XF86MonBrightnessUp".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call brightness increase"; 
+          "XF86MonBrightnessDown".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call brightness decrease"; 
 
-          "XF86AudioNext".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call media next";
-          "XF86AudioPrev".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call media previous";
-          "XF86AudioPlay".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call media playPause";
-          "XF86AudioPause".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call media playPause";
+          "XF86AudioNext".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call media next";
+          "XF86AudioPrev".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call media previous";
+          "XF86AudioPlay".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call media playPause";
+          "XF86AudioPause".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call media playPause";
 
           "XF86KbdBrightnessUp".spawn-sh = "${lib.getExe pkgs.asusctl} leds next";
           "XF86KbdBrightnessDown".spawn-sh = "${lib.getExe pkgs.asusctl} leds prev";
@@ -142,10 +142,10 @@
           "XF86Launch1".spawn-sh = "${lib.getExe' pkgs.asusctl "rog-control-center"}";
           "XF86Launch4".spawn-sh = "${lib.getExe pkgs.asusctl} profile next";
 
-          "XF86AudioRaiseVolume".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call volume increase";
-          "XF86AudioLowerVolume".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call volume decrease";
-          "XF86AudioMute".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call volume muteOutput";
-          "XF86AudioMicMute".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call volume muteInput";
+          "XF86AudioRaiseVolume".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call volume increase";
+          "XF86AudioLowerVolume".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call volume decrease";
+          "XF86AudioMute".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call volume muteOutput";
+          "XF86AudioMicMute".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call volume muteInput";
 
           "Mod+Shift+S".spawn-sh = ''${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})" - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}'';
           "Print".spawn-sh = ''${lib.getExe pkgs.grim} - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}'';
@@ -159,8 +159,8 @@
           "XF86Launch5".spawn-sh = "${lib.getExe' pkgs.networkmanager "nmcli"} radio all off";
           "SHIFT+XF86Launch5".spawn-sh = "${lib.getExe' pkgs.networkmanager "nmcli"} radio all on";
 
-          "Mod+I".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call settings toggle";
-          "Mod+L".spawn-sh = "${lib.getExe self'.packages.sNoctalia} ipc call lockScreen lock"; 
+          "Mod+I".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call settings toggle";
+          "Mod+L".spawn-sh = "${lib.getExe self'.packages.snoctalia} ipc call lockScreen lock"; 
         };  
 
         extraConfig = ''

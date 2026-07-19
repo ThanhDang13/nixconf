@@ -1,12 +1,12 @@
 { self, inputs, ... }: {
   flake.nixosModules.kitty = { pkgs, lib, ... }: {
     environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.sKitty
+      self.packages.${pkgs.stdenv.hostPlatform.system}.skitty
     ];
   };
 
   perSystem = { pkgs, lib, self', ... }: {
-    packages.sKitty =
+    packages.skitty =
       let
         kittyConfigText = ''
           font_family JetBrainsMono Nerd Font
