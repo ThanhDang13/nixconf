@@ -17,10 +17,14 @@
     imports = [
      self.nixosModules.niri-touchpad-toggle
      self.nixosModules.noctalia-kbd-sync
+     self.nixosModules.wl-mirror
+     self.nixosModules.xdg
     ];
 
     xdg.portal.config = {
       niri = {
+        "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+        "org.freedesktop.impl.portal.Screenshot" = "gnome";
         "org.freedesktop.impl.portal.FileChooser" = "nautilus";
       };
     };
@@ -33,7 +37,7 @@
       settings = {
 
         spawn-at-startup = [
-	        (lib.getExe self'.packages.snoctalia)
+          (lib.getExe self'.packages.snoctalia)
         ];
 
         hotkey-overlay.skip-at-startup = true;
@@ -92,12 +96,13 @@
           "Mod+W".switch-preset-column-width = { };
           "Mod+Minus".set-column-width = "-10%";
           "Mod+Equal".set-column-width = "+10%";
+          "Mod+F".fullscreen-window = {};
 
           "Mod+Left".focus-column-left = { };
           "Mod+Down".focus-window-down = { };
           "Mod+Up".focus-window-up = { };
           "Mod+Right".focus-column-right = { };
-
+          
 
           "Mod+Shift+Left".move-column-left = { };
           "Mod+Shift+Down".move-window-down = { };
@@ -153,6 +158,7 @@
           "Ctrl+Print".screenshot-window = { };
 
           "XF86TouchpadToggle".spawn-sh = "niri-toggle-touchpad";
+          "Mod+P".spawn-sh = "mirror-display";
 
           "XF86Sleep".spawn-sh = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
 

@@ -13,7 +13,7 @@
     services.supergfxd.enable = true;
 
     environment.sessionVariables = {
-      GDK_BACKEND = "wayland,x11";
+      GDK_BACKEND = "wayland";
     };
   };
 }

@@ -98,6 +98,7 @@
         # =========================
         eval "$(zoxide init zsh)"
         eval "$(starship init zsh)"
+        eval "$(fnm env --use-on-cd --corepack-enabled)"
 
         source <(fzf --zsh)
 

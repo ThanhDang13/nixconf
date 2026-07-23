@@ -10,14 +10,5 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
     };
 
-    xdg.portal = {
-      enable = true;
-
-      extraPortals = [
-        pkgs.xdg-desktop-portal-wlr
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-gnome
-      ];
-    };
   };
 }

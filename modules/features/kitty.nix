@@ -16,7 +16,7 @@
           confirm_os_window_close 0
           cursor_blink_interval 0
           scrollback_lines 10000
-          background_opacity 0.6
+          background_opacity 0.5
           remember_window_size no
           hide_window_decorations yes
           window_padding_width 0 15 0 15

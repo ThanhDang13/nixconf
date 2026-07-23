@@ -15,9 +15,16 @@
      self.nixosModules.discord
      self.nixosModules.docker
      self.nixosModules.nautilus
+     self.nixosModules.nodejs
+     self.nixosModules.claude-code
    ];
 
    environment.systemPackages = with pkgs; [
+   ];
+
+   programs.nix-ld.enable = true;
+   programs.nix-ld.libraries = with pkgs; [
+
    ];
 
    security.sudo.enable = true;
@@ -37,10 +44,25 @@
       ];
    };
 
+   nix.settings.trusted-users = [ "root" "@wheel" ];
+
    nix.settings.experimental-features = [ "nix-command" "flakes" ];
    nixpkgs.config.allowUnfree = true;
 
+   security.rtkit.enable = true;
+   services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+   };
+
    boot.kernelPackages = pkgs.linuxPackages_latest;
+   boot.kernelParams = [
+    "quiet"
+    "splash"
+   ];
+
    boot.loader = {
      systemd-boot.enable = lib.mkForce false;
      grub = {

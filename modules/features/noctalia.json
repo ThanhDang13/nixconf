@@ -39,6 +39,10 @@
             "useDistroLogo": false
           },
           {
+            "defaultSettings": {},
+            "id": "plugin:mirror-mirror"
+          },
+          {
             "clockColor": "none",
             "customFont": "",
             "formatHorizontal": "HH:mm ddd, MMM dd",
@@ -139,6 +143,24 @@
             "unreadBadgeColor": "primary"
           },
           {
+            "defaultSettings": {
+              "autoPaste": false,
+              "autoPasteDelay": 300,
+              "autoPasteOnRightClick": false,
+              "cardColors": {},
+              "customColors": {},
+              "enableTodoIntegration": false,
+              "fullscreenMode": false,
+              "hidePanelBackground": false,
+              "notecardsEnabled": true,
+              "panelHeight": 0,
+              "panelWidth": 1450,
+              "pincardsEnabled": true,
+              "showCloseButton": true
+            },
+            "id": "plugin:clipper"
+          },
+          {
             "deviceNativePath": "__default__",
             "displayMode": "graphic-clean",
             "hideIfIdle": false,
@@ -170,6 +192,17 @@
             "icon": "noctalia",
             "id": "ControlCenter",
             "useDistroLogo": false
+          },
+          {
+            "defaultSettings": {
+              "autoStartBreaks": false,
+              "autoStartWork": false,
+              "longBreakDuration": 15,
+              "sessionsBeforeLongBreak": 4,
+              "shortBreakDuration": 5,
+              "workDuration": 25
+            },
+            "id": "plugin:pomodoro"
           }
         ]
       },
@@ -499,7 +532,7 @@
       "disableDesktopWidgets": true
     },
     "dock": {
-      "enabled": true,
+      "enabled": false,
       "position": "bottom",
       "displayMode": "auto_hide",
       "dockType": "floating",
@@ -774,7 +807,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/sakata/Pictures/Wallpapers/wallpaper4.jpg"
+      "eDP-1": "/home/sakata/Pictures/Wallpapers/wallpaper2.png",
+      "HDMI-A-1": "/home/sakata/Pictures/Wallpapers/wallpaper2.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -792,10 +826,25 @@
         "vrr_supported": true,
         "vrr_enabled": false,
         "transform": "Normal"
+      },
+      "HDMI-A-1": {
+        "name": "HDMI-A-1",
+        "connected": true,
+        "scale": 1,
+        "width": 1600,
+        "height": 900,
+        "x": 1920,
+        "y": 0,
+        "physical_width": 430,
+        "physical_height": 240,
+        "refresh_rate": 60000,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1784457668000
+      "lastSeenTs": 1784563908000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
