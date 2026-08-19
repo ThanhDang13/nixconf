@@ -6,5 +6,7 @@
       "aarch64-linux"
       "aarch64-darwin"
     ];
+
+  _module.args.root = ../.;
   };
 }

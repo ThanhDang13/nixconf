@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{ self, inputs, root, ... }: {
 
  flake.nixosModules.snix-configuration = { pkgs, lib, ... }: {
    imports = [
@@ -77,7 +77,7 @@
        efiSupport = true;
        device = "nodev";
        useOSProber = true;
-       theme = ../../themes/grub/blasphemous;
+       theme = root + /modules/themes/grub/blasphemous;
      };
      efi = {
        efiSysMountPoint = "/boot/efi";

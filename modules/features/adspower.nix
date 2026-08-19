@@ -1,7 +1,7 @@
-{ ... }: {
+{ root, ... }: {
   flake.nixosModules.adspower = { pkgs, ... }: {
     environment.systemPackages = [
-      (pkgs.callPackage ../../pkgs/adspower { })
+      (pkgs.callPackage (root + /pkgs/adspower) { })
     ];
   };
 }
