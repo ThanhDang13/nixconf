@@ -16,6 +16,7 @@
 
       runtimePkgs = with pkgs; [
         git
+        git-lfs
         starship
         zoxide
         fzf
