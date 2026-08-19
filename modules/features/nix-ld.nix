@@ -1,0 +1,50 @@
+{ ... }: {
+  flake.nixosModules.nix-ld = { pkgs, ... }: {
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+        stdenv.cc.cc
+        glib
+        nss
+        nspr
+        atk
+        at-spi2-atk
+        at-spi2-core
+        cups
+        dbus
+        expat
+        libdrm
+        gtk3
+        pango
+        cairo
+        alsa-lib
+        mesa
+        libGL
+        libX11
+        libXcomposite
+        libXdamage
+        libXext
+        libXfixes
+        libXrandr
+        libXrender
+        libXtst
+        libXi
+        libxcb
+        libxkbcommon
+        mesa        
+        libgbm      
+        libGL
+        libxshmfence
+        libX11
+        libXcomposite
+        libXdamage
+        libXext
+        libXfixes
+        libXrandr
+        libXrender
+        libXtst
+        libXi
+        libxcb
+        libxkbcommon
+    ];
+  };
+}

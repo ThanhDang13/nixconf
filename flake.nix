@@ -6,6 +6,7 @@
     import-tree.url = "github:vic/import-tree";
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    hermes-agent.url = "github:NousResearch/hermes-agent/v2026.7.20";
 
     claude-code.url = "github:sadjow/claude-code-nix";
   };

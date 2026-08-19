@@ -47,6 +47,7 @@
 
       zshenv.content = ''
         export PATH="$HOME/.local/bin:$PATH"
+        export HERMES_HOME="$HOME/.hermes"
       '';
 
       zshrc.content = ''

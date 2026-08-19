@@ -16,7 +16,7 @@
 
     imports = [
      self.nixosModules.niri-touchpad-toggle
-     self.nixosModules.noctalia-kbd-sync
+     self.nixosModules.noctalia-sync
      self.nixosModules.wl-mirror
      self.nixosModules.xdg
     ];
@@ -64,6 +64,10 @@
           }
           {
             matches = [{ app-id = "^org\\.gnome\\.Nautilus$"; }];
+            opacity = 0.85;
+          }
+          {
+            matches = [{ app-id = "^obsidian$"; }];
             opacity = 0.85;
           }
         ];

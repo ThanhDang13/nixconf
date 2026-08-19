@@ -17,7 +17,14 @@
      self.nixosModules.nautilus
      self.nixosModules.nodejs
      self.nixosModules.claude-code
+     self.nixosModules.adspower
+     self.nixosModules.nix-ld
+     self.nixosModules.hermes
+     self.nixosModules.obsidian
+     self.nixosModules.warp
    ];
+
+   services.teamviewer.enable = true;
 
    environment.systemPackages = with pkgs; [
    ];
@@ -70,6 +77,7 @@
        efiSupport = true;
        device = "nodev";
        useOSProber = true;
+       theme = ../../themes/grub/blasphemous;
      };
      efi = {
        efiSysMountPoint = "/boot/efi";
